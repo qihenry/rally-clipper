@@ -35,12 +35,12 @@ It does **not** try to detect the serve directly. Instead, it detects when the b
 
 ## Why this version is built this way
 
-This is the fastest realistic first build because:
+This is the fastest realistic first build because of the following assumptions:
 
-- your camera is usually stable on a tripod
-- audio is noisy in a club, so audio detection is weak
-- explicit serve detection is harder and less reliable than backtracking a little before “ball in play”
-- manual table selection makes the detection much more stable
+- Camera is usually stable on a tripod
+- Audio is noisy in a club, so audio detection is weak
+- Explicit serve detection is harder and less reliable than backtracking a little before “ball in play”. Camera angle will hide the ball sometimes
+- manual table selection makes the detection much more stable and will remove interference from other players
 
 ## Requirements
 
@@ -99,7 +99,7 @@ clips_manifest.csv
 run_metadata.json
 ```
 
-### Reuse a known table ROI
+### Reuse a known table ROI (ignore for most part)
 
 If you already know the rectangle, skip the selector:
 
@@ -151,15 +151,6 @@ The detector uses frame-to-frame motion, focused around the table:
 
 It computes motion scores over time, smooths them, detects sustained “active” windows, merges nearby activity, and exports clips.
 
-## Best recording conditions
-
-You should get the best results when:
-
-- camera is fixed and stable
-- the whole table is visible
-- players stay mostly in frame
-- people rarely walk in front of the camera
-- lighting is fairly consistent
 
 ## Known limitations
 
