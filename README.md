@@ -61,7 +61,18 @@ Check ffmpeg:
 ```bash
 ffmpeg -version
 ```
+https://www.gyan.dev/ffmpeg/builds/#:~:text=ffmpeg%2Drelease%2Dessentials.zip,.ver%20.sha256
 
+^ thats where I downloaded ffmpeg. then to set it to env path:
+1. Press Windows key
+2. Search: Environment Variables
+3. Click Edit the system environment variables
+4. Click Environment Variables
+5. Under System variables → find Path
+6. Click Edit
+7. Click New
+   Add: `C:\ffmpeg\bin`
+8. Click OK on everything
 ## Run it
 
 ### Basic use
